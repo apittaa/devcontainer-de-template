@@ -21,7 +21,7 @@
 	// "forwardPorts": [],
 
 	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
+	"postCreateCommand": "git config --global --add safe.directory /workspaces/devcontainer-de-template",
 
 	// Configure tool-specific properties.
 	"customizations": {

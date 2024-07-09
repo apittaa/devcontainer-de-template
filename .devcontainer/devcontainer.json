@@ -7,14 +7,15 @@
 		"context": "..",
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile",
-		"args": { 
+		"target": "development",
+		"args": {
 			// Options arm64 or amd64
 			"PLATFORM": "amd64" 
 		}
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	// "features": {},	
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],

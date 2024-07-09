@@ -1,5 +1,5 @@
 # Use the latest Python slim image as the base image
-FROM python:3.12-slim-bookworm as base
+FROM python:3.12-slim-bookworm AS base
 
 # Install zsh, git, and dependencies for zsh-syntax-highlighting and zsh-autosuggestions
 RUN apt-get update && \
@@ -24,7 +24,7 @@ RUN apt-get install -y fonts-powerline
 RUN pip install poetry --no-cache-dir
 
 # Stage : Development
-FROM base as development
+FROM base AS development
 
 # Set the working directory in the container
 WORKDIR /app

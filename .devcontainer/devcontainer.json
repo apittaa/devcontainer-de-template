@@ -21,7 +21,7 @@
 	// "forwardPorts": [],
 
 	// Uncomment the next line to run commands after the container is created.
-	"postCreateCommand": "git config --global --add safe.directory /workspaces/devcontainer-de-template",
+	"postCreateCommand": "git config --global --add safe.directory /workspaces/devcontainer-de-template", // Change this to your repository name
 
 	// Configure tool-specific properties.
 	"customizations": {

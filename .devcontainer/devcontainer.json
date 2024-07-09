@@ -7,12 +7,23 @@
 		"context": "..",
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 		"dockerfile": "../Dockerfile",
+		// Set targets to the desired Docker build stages.
 		"target": "development",
 		"args": {
 			// Options arm64 or amd64
 			"PLATFORM": "amd64" 
 		}
 	},
+	
+	// Set runArgs to mount the SSH agent socket in the container. More info: https://aka.ms/vscode-remote/ssh-auth-sock.
+	// 1. Run eval `ssh-agent -s` to start the SSH agent. E.g. eval "$(ssh-agent -s)"
+	// 2. Run ssh-add to add your SSH key to the agent. E.g. ssh-add ~/.ssh/id_rsa
+	// 3. Run echo $SSH_AUTH_SOCK to get the path to the SSH agent socket.
+	// 4. Update the runArgs below with the path to the SSH agent socket.
+	"runArgs": [
+		"-v", "/tmp/ssh-ivtGpxlgw8mP/agent.2544654:/tmp/ssh-ivtGpxlgw8mP/agent.2544654",
+		"-e", "SSH_AUTH_SOCK=/tmp/ssh-ivtGpxlgw8mP/agent.2544654"
+	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},	
@@ -21,7 +32,9 @@
 	// "forwardPorts": [],
 
 	// Uncomment the next line to run commands after the container is created.
-	"postAttachCommand": "git config --global --add safe.directory /workspaces/devcontainer-de-template", // Change this to the path of your .gitconfig file
+	// Add postAttachCommand to add the safe.directory to the git config. More info: https://aka.ms/vscode-remote/containers/advanced-configuration.
+	// Change the safe.directory to the path of your workspace.
+	"postAttachCommand": "git config --global --add safe.directory /workspaces/devcontainer-de-template",
 
 	// Configure tool-specific properties.
 	"customizations": {

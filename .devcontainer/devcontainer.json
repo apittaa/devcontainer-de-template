@@ -15,14 +15,10 @@
 		}
 	},
 	
-	// Set runArgs to mount the SSH agent socket in the container. More info: https://aka.ms/vscode-remote/ssh-auth-sock.
-	// 1. Run eval `ssh-agent -s` to start the SSH agent. E.g. eval "$(ssh-agent -s)"
-	// 2. Run ssh-add to add your SSH key to the agent. E.g. ssh-add ~/.ssh/id_rsa
-	// 3. Run echo $SSH_AUTH_SOCK to get the path to the SSH agent socket.
-	// 4. Update the runArgs below with the path to the SSH agent socket.
+	// Set runArgs to configure ssh key
 	"runArgs": [
-		"-v", "/tmp/ssh-ivtGpxlgw8mP/agent.2544654:/tmp/ssh-ivtGpxlgw8mP/agent.2544654",
-		"-e", "SSH_AUTH_SOCK=/tmp/ssh-ivtGpxlgw8mP/agent.2544654"
+		"-v", "/home/pitta/.ssh/id_ed25519:/root/.ssh/id_ed25519",
+		"-e", "SSH_AUTH_SOCK="
 	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.

@@ -31,6 +31,9 @@
 	// Add postAttachCommand to add the safe.directory to the git config. More info: https://aka.ms/vscode-remote/containers/advanced-configuration.
 	// Change the safe.directory to the path of your workspace.
 	"postAttachCommand": "git config --global --add safe.directory /workspaces/devcontainer-de-template",
+	
+	// Add postCreateCommand to configure zsh in the container.
+	"postCreateCommand": "chmod +x ./setup-zsh.sh && ./setup-zsh.sh",
 
 	// Configure tool-specific properties.
 	"customizations": {

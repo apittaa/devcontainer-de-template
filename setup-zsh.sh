@@ -1,14 +1,16 @@
 #!/bin/bash
 
-# This script installs ZSH, Git, and Curl.
+# This script installs ZSH, Git, Curl, and pre-commit.
 # It is used to set up the development environment for the project.
 # ZSH is a powerful shell with additional features and customization options.
 # Git is a version control system used for tracking changes in code.
 # Curl is a command-line tool used for making HTTP requests.
+# pre-commit is a framework for managing and maintaining multi-language pre-commit hooks.
 # Usage: ./setup-zsh.sh
 
-# Install ZSH, Git, and Curl
+# Install ZSH, Git, Curl, and pre-commit
 apt-get update && apt-get install -y curl zsh git fonts-powerline
+pip install pre-commit
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended

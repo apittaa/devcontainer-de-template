@@ -1,8 +1,9 @@
 # Use the latest Python slim image as the base image
 FROM python:3.12-slim-bookworm AS base
 
-# Install Poetry
-RUN pip install poetry --no-cache-dir
+# Install Poetry and git
+RUN apt-get update && apt-get install -y git && \
+    pip install poetry --no-cache-dir
 
 # Stage : Development
 FROM base AS development

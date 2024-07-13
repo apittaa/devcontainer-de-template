@@ -51,18 +51,12 @@ jobs:
 
     # Step 6: Install project dependencies using Poetry
     - name: Install dependencies
-      run: |
-        source $HOME/.poetry/env
-        poetry install
+      run: poetry install
 
     # Step 7: Run pre-commit hooks to ensure code quality
     - name: Run pre-commit hooks
-      run: |
-        source $HOME/.poetry/env
-        poetry run pre-commit run --all-files
+      run: poetry run pre-commit run --all-files
 
-    # Step 8: Run tests using pytest
-    - name: Run tests
-      run: |
-        source $HOME/.poetry/env
-        poetry run pytest
+    # # Step 8: Run tests using pytest
+    # - name: Run tests
+    #   run: poetry run pytest

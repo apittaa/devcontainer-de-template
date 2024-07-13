@@ -15,7 +15,7 @@ WORKDIR /app
 COPY . /app
 
 # Install development dependencies
-# RUN poetry config virtualenvs.create false && poetry install --only main --no-root
+RUN if [ -f poetry.lock ]; then poetry config virtualenvs.create false && poetry install --only main --no-root; fi
 
 # Run app.py when the container launches
 CMD ["python", "app.py"]

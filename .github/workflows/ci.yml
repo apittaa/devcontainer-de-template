@@ -53,7 +53,11 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    # Step 7: Run pre-commit hooks to ensure code quality
+    # Step 7: Install pre-commit
+    - name: Install pre-commit
+      run: poetry run pre-commit install
+
+    # Step 8: Run pre-commit hooks to ensure code quality
     - name: Run pre-commit hooks
       run: poetry run pre-commit run --all-files
 

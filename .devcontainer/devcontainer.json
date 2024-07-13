@@ -28,8 +28,8 @@
 	// "forwardPorts": [],
 
 	// Uncomment the next line to run commands after the container is created.
-	// Add postCreateCommand to configure zsh and install pre-commit hooks.
-	"postCreateCommand": "chmod +x ./setup-zsh.sh && ./setup-zsh.sh",
+	// Add postCreateCommand to configure zsh, install pre-commit hooks and initialize poetry.
+	"postCreateCommand": "chmod +x ./setup-zsh.sh && ./setup-zsh.sh && poetry init --no-interaction",
 	
 	// Add postAttachCommand to add the safe.directory to the git config. More info: https://aka.ms/vscode-remote/containers/advanced-configuration.
 	// Change the safe.directory to the path of your workspace.
